@@ -1,12 +1,16 @@
 <template>
   <div class="layout-default">
-    <!-- Phase 3 會在這裡加 TopHeader、SiteFooter、HiddenMenu -->
-    <main>
+    <LayoutTopHeader />
+
+    <!-- 頁面的容器 (原 .main-page) -->
+    <div class="main-page">
       <slot />
-    </main>
+    </div>
+
+    <LayoutSiteFooter />
   </div>
 </template>
 
 <script setup lang="ts">
-// Phase 0 skeleton
+// Phase 6 會加 HiddenMenu 和 FlickeringCanvas
 </script>

@@ -62,7 +62,7 @@ export default defineNuxtConfig({
     '~/styles/infomation_card.css', // 產品資訊卡
     '~/styles/hidden_menu.css', // 隱藏選單
     '~/styles/intro_page.css', // 工廠介紹頁
-    '~/styles/footer.css', // 舊版頁尾樣式（Phase 3 會重寫）
+    '~/styles/site_footer.css', // 現代化頁尾 (Phase 3 新增)
   ],
 
   // 模組

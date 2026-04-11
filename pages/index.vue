@@ -1,24 +1,25 @@
 <template>
-  <div class="main-page">
-    <h1 style="padding: 2rem; color: #690303">重光企業社</h1>
-    <p style="padding: 0 2rem">
-      Phase 2 驗證：CSS 已載入<br>
-      背景應為深紅 <code>rgb(105, 3, 3)</code>，主容器應為白色圓角卡片，字體應為宋體 <code>cwTeXFangSong</code>。
-    </p>
+  <div>
+    <div style="padding: 6vw 3vw 3vw; width: 100%; box-sizing: border-box">
+      <h1 style="color: #690303; font-size: 3vw; text-align: center">Phase 3 驗證</h1>
+      <p style="text-align: center; color: #666">
+        頂部 header + 現代化頁尾 + 白色主容器
+      </p>
 
-    <section style="padding: 1rem 2rem 2rem">
-      <h2 style="color: #690303">分類數量：{{ categories.length }} / 產品數量：{{ products.length }}</h2>
-      <ul>
-        <li v-for="cat in categories" :key="cat.type">
-          <strong>{{ cat.name }}</strong> — {{ getProductsByType(cat.type).length }} 項產品
-        </li>
-      </ul>
-    </section>
+      <section style="padding: 2vw 3vw">
+        <h2 style="color: #690303">分類與產品</h2>
+        <ul>
+          <li v-for="cat in categories" :key="cat.type">
+            <strong>{{ cat.name }}</strong> — {{ getProductsByType(cat.type).length }} 項
+          </li>
+        </ul>
+      </section>
+    </div>
   </div>
 </template>
 
 <script setup lang="ts">
-const { categories, products, getProductsByType } = useProducts()
+const { categories, getProductsByType } = useProducts()
 
 useHead({
   title: '重光企業社 | 彰化傳統手工蠟燭工廠 | 斗燭・祭祀蠟燭・拜拜用品',
