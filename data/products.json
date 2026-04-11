@@ -1,0 +1,164 @@
+{
+    "categories": [
+        {
+            "name": "佛杯",
+            "type": "Type-1",
+            "image": "image/cup candle intro.png",
+            "description": "這種單一色調的精緻造型，無論是作為節日慶典的裝飾，還是日常用來營造一種舒適安逸的家居氛圍，都十分適合。它的設計簡潔大方，無論放置於哪裡，都能成為視覺焦點。與傳統的蠟燭功能一樣，當它點燃時，溫和的光芒會散發出來，帶來寧靜的光線和柔和的氛圍。這款蠟燭透過其簡潔的美感和喜慶的色彩，確保了其在任何場合的多功能性和吸引力。"
+        },
+        {
+            "name": "蓮花",
+            "type": "Type-2",
+            "image": "image/lotus candle intro.png",
+            "description": "在月光朦朧的夜晚，一盞純淨的蠟燭靜靜燃燒，它的光芒柔和而持久，照亮了窗台上的一朵紅色蓮花。蓮花在這微弱的光線中顯得尤為高雅，它的紅色如同經歷了千年的時光洗禮，深沉而鮮亮。蓮花與蠟燭共存，彷彿在講述著一段古老而美麗的故事，讓人感受到一種超脫世俗的寧靜與美好。這一幕，仿佛是時間靜止的瞬間，讓人忘卻塵世的煩擾，沉浸在這份高雅與安寧之中。"
+        },
+        {
+            "name": "旺來",
+            "type": "Type-3",
+            "image": "image/pineapple candle intro.png",
+            "description": "富貴象徵—鳳梨，代表著財富與吉祥。紅色的蠟燭散發出溫暖而柔和的光芒，猶如迎財神、招福入宅之意，極富東方神韻。在節慶日子或祭祀儀式中，它不僅能作為祈求財運亨通的象徵，也為家居空間帶來一分寧靜與和諧。點燃這鳳梨蠟燭，就像是點燃了對未來美好生活的期盼，讓每個角落都瀰漫著富足和幸福的氣息。"
+        },
+        {
+            "name": "葫蘆",
+            "type": "Type-4",
+            "image": "image/gourd candle intro.png",
+            "description": "在靜謐的禪房，一盞紅色葫蘆蠟燭輕輕搖曳，其雅致的火焰映照著古樸的佛像和細密的壁龕。紅絲帶環繞在蠟燭周圍，如同祈願的絲帶，隨風輕輕飄揚，把願望和祝福送至無邊的宇宙。這室內的每一個角落，都沉浸在蠟燭溫暖的光輝中。溫暖的燭光穿透了歲月的沉重，帶來一份微妙的安寧和藹，每一次燭火跳躍，都是對過往的懷緬，對未來的展望，亦是心靈深處對於寧靜的嚮往。"
+        },
+        {
+            "name": "斗燭",
+            "type": "Type-5",
+            "image": "image/strait candle intro.jpg",
+            "description": "紅色的斗燭熾熱地燃燒，像是生命中的希望，提醒我們堅韌的精神。當風吹過，燭光會更加明亮，當雨滴落，燭火會更加堅韌，這就是我們的生活，風調雨順，無論如何都會繼續前進。我們將斗燭插在充滿財富的土地上，期待財源廣進。這些斗燭像是吉祥的符號，每次點燃它們，都彷彿能帶來新的希望和驚喜。它們照亮了前方的道路，像是指引我們走向豐盛的指南針，使我們的生活充滿了富饒與幸福。"
+        }
+    ],
+    "products": [
+        {
+            "title": "20斤旺來",
+            "category": "旺來",
+            "type": "Type-3",
+            "image": "image/10 pineapple info.jpg",
+            "description": "青磚白瓦間，燭光在微風裡閃爍舞動，如同星辰落入凡塵。",
+            "price": "1 箱 1對入 860 元, 單個 860 元"
+        },
+        {
+            "title": "10斤旺來",
+            "category": "旺來",
+            "type": "Type-3",
+            "image": "image/10 pineapple info.jpg",
+            "description": "青磚白瓦間，燭光在微風裡閃爍舞動，如同星辰落入凡塵。",
+            "price": "1 箱 3對入 1400 元, 單個 500 元"
+        },
+        {
+            "title": "1號旺來(B)",
+            "category": "旺來",
+            "type": "Type-3",
+            "image": "image/1 pineapple info.jpg",
+            "description": "燭火輕輕搖曳，熱情與豐盛始終是生命的寶貴禮物。",
+            "price": "1 箱 6對入 1350 元, 單個 250 元"
+        },
+        {
+            "title": "2號旺來(B)",
+            "category": "旺來",
+            "type": "Type-3",
+            "image": "image/2 pineapple info.jpg",
+            "description": "龍鳳吉祥，於蒼穹之間舞動，引領著盈滿希冀的風雲。",
+            "price": "1 箱 12對入 1350 元, 單個 125 元"
+        },
+        {
+            "title": "3號旺來",
+            "category": "旺來",
+            "type": "Type-3",
+            "image": "image/3 pineapple info.jpg",
+            "description": "微風過處，蠟燭光芒與龍鳳影子交織，穿越時空的傳說。",
+            "price": "1 箱 24對入 1350 元, 單個 65 元"
+        },
+        {
+            "title": "5號旺來",
+            "category": "旺來",
+            "type": "Type-3",
+            "image": "image/5 pineapple info.jpg",
+            "description": "鳳梨般結實豐滿的蠟燭燭光閃爍，散發出典雅的薰香。",
+            "price": "1 箱 48對入 1600 元, 單個 35 元"
+        },
+        {
+            "title": "佛杯",
+            "category": "佛杯",
+            "type": "Type-1",
+            "image": "image/red cup candle1.jpg",
+            "description": "經典色彩，設計簡潔，色彩鮮豔而溫暖。",
+            "price": "1 箱 48對入 1600 元, 單個 35 元, 另有黃色需預先訂購"
+        },
+        {
+            "title": "1號葫蘆",
+            "category": "葫蘆",
+            "type": "Type-4",
+            "image": "image/red gourd XL.jpg",
+            "description": "蠟燭明火如一份愿望，一篇咒語，靜靜地帶來安詳與祝福。",
+            "price": "1 箱 6對入 1400 元, 單個 260 元, 另有黃色需預先訂購"
+        },
+        {
+            "title": "2號葫蘆",
+            "category": "葫蘆",
+            "type": "Type-4",
+            "image": "image/red gourd large.jpg",
+            "description": "紅燈昏黃之下閉目祈禱天地的庇護，智慧之光的啟迪。",
+            "price": "1 箱 12對入 1400 元, 單個 130 元, 另有黃色需預先訂購"
+        },
+        {
+            "title": "3號葫蘆",
+            "category": "葫蘆",
+            "type": "Type-4",
+            "image": "image/red gourd small.jpg",
+            "description": "每一次燭火跳躍都是對過往的懷緬，對未來的展望。",
+            "price": "1 箱 24對入 1350 元, 單個 65 元, 另有黃色需預先訂購"
+        },
+        {
+            "title": "5號葫蘆",
+            "category": "葫蘆",
+            "type": "Type-4",
+            "image": "image/red gourd tiny.jpg",
+            "description": "溫暖燭光穿透了歲月沉重，帶來一份微妙的安寧和藹。",
+            "price": "1 箱 48對入 1600 元, 單個 35 元"
+        },
+        {
+            "title": "2號立體蓮花",
+            "category": "蓮花",
+            "type": "Type-2",
+            "image": "image/yellow lotus large candle.jpg",
+            "description": "鮮艷的黃色更顯耀眼，仿佛是燃燒著最炙熱的心跳。",
+            "price": "1 箱 12對入 1350 元, 單個 125 元"
+        },
+        {
+            "title": "五號蓮花",
+            "category": "蓮花",
+            "type": "Type-2",
+            "image": "image/red lotus candle.jpg",
+            "description": "蓮花如同經歷了千年的時光洗禮，深沉而鮮亮。",
+            "price": "1 箱 36對入 1400 元, 單個 40 元, 另有黃色需預先訂購"
+        },
+        {
+            "title": "一斤斗燭",
+            "category": "斗燭",
+            "type": "Type-5",
+            "image": "image/strait short info.jpg",
+            "description": "點燃斗燭於充滿財富的土地上，期待財源廣進。",
+            "price": "1 箱 36對入, 1斤58元"
+        },
+        {
+            "title": "二斤斗燭",
+            "category": "斗燭",
+            "type": "Type-5",
+            "image": "image/strait short info.jpg",
+            "description": "點燃斗燭於充滿財富的土地上，期待財源廣進。",
+            "price": "1 箱 20對入, 1斤58元"
+        },
+        {
+            "title": "三斤斗燭",
+            "category": "斗燭",
+            "type": "Type-5",
+            "image": "image/strait short info.jpg",
+            "description": "點燃斗燭於充滿財富的土地上，期待財源廣進。",
+            "price": "1 箱 12對入, 1斤58元"
+        }
+    ]
+}

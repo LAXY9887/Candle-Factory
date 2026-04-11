@@ -1,10 +1,15 @@
 """
 從 Assets/data/產品清單.csv 讀取產品資料，
-更新 public/product_infoCard.json 的 products 區段。
+更新 data/products.json 的 products 區段。
 categories 區段保持不變。
 
 使用方式：
     python scripts/update_products.py
+
+備註：
+    Assets/ 存放原始設計素材 (PSD、原圖、CSV)，整個目錄 .gitignore，
+    僅 產品清單.csv 為例外（單一來源的產品資料）。
+    data/products.json 由本腳本生成，是 Nuxt build time 讀取的產品資料。
 """
 
 import csv
@@ -14,7 +19,7 @@ import os
 # 路徑
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CSV_PATH = os.path.join(BASE_DIR, "Assets", "data", "產品清單.csv")
-JSON_PATH = os.path.join(BASE_DIR, "public", "product_infoCard.json")
+JSON_PATH = os.path.join(BASE_DIR, "data", "products.json")
 
 
 def read_csv(path):
