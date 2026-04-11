@@ -1,0 +1,42 @@
+# 原始設計素材（太大，不放 Git）
+Assets/*
+!Assets/data/
+Assets/data/*
+!Assets/data/產品清單.csv
+
+# Firebase
+.firebase/
+firebase-debug.log
+firebase-debug.*.log
+.runtimeconfig.json
+
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# Editor
+.vscode/
+*.swp
+*~
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Temporary
+*.tmp
+*.bak

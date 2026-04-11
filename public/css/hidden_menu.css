@@ -1,0 +1,190 @@
+/*隱藏菜單*/
+.hidden-menu{
+    position: fixed;
+    display: block;
+    right: -100%;
+    top: 0px;
+    margin: 0px;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(255, 225, 225);
+    opacity: 0;
+    z-index: 1000;
+    transition: all 0.8s;
+}
+.hidden-menu.show{
+    opacity: 0.95;
+    right: 0%;
+}
+
+/*隱藏菜單 標題*/
+.hidden-menu-title-container {
+    width: 100%;
+    height: 8vw;
+    min-height: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+.hidden-menu-title-container span{
+    position: absolute;
+    bottom: 0%;
+    font-size: 2em; /*文字大小*/
+    color: rgb(87, 0, 0);
+}
+
+/*隱藏菜單 下拉式選單*/
+.menu-option-wapper{
+    overflow-y: scroll;
+    padding-right: 10%;
+    padding-left: 2%;
+    width: 100%;
+    height: 60%;
+    position: relative;
+    top: 0px;
+    margin-top: 2vw;
+}
+.menu-option-wapper span{
+    color: rgb(87, 0, 0);
+}
+.menu-option-wapper span:hover{
+    color: rgb(78, 35, 234);
+}
+
+.hidden-menu-option-container {
+    width: 100%;
+    height: fit-content;
+    position: relative;
+    text-align: center;
+    display: block;
+    transition: all 0.8s;
+    margin-bottom: 15px;
+}
+.hidden-menu-option-container span{
+    cursor: pointer;
+}
+.hidden-menu-option-container ul{
+    transition: all 0.4s;
+    max-height: 0px;
+    overflow-y:hidden; 
+    margin-top: 0;
+    padding: 0;
+}
+.hidden-menu-option-container li{
+    margin-bottom: 5px;
+    text-decoration: none;
+    list-style-type: none;
+    border-bottom: none;
+}
+
+.hidden-dropdown span:hover {
+    color: rgb(234, 35, 35);
+}
+.hidden-dropdown.reveal {
+    max-height: 200px;
+}
+
+.hidden-option-btn{
+    background-color: transparent;
+    border: none;
+}
+
+.hidden-option-btn span{
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+    /* 宋體 */
+    font-family: 'cwTeXFangSong', serif;
+}
+
+/*隱藏菜單 末端聯絡資訊*/
+.hidden-menu-text-container {
+    width: 100%;
+    height: fit-content;
+    margin: 2px;
+    position: absolute;
+    bottom: 0;
+}
+.hidden-menu-text-container span{
+    color: rgb(87, 0, 0);
+}
+.hidden-menu-text-container ul{
+    padding-left: 10px;
+}
+.hidden-menu-text-container li{
+    text-decoration: none;
+    list-style-type: none;
+    line-height: 30px;
+}
+#contact-text-title{
+    position: relative;
+    left: 5px;
+}
+.hidden-contactInfo {
+    left: 5px;
+    margin: 0px;
+}
+
+/* 響應式控制按鈕字體大小 - 響應螢幕大小 */
+@media screen and (max-width: 800px) {
+    .hidden-menu{
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .hidden-menu{
+        width: 150px;
+    }
+}
+
+.item-text{
+    /* 宋體 */
+    font-family: 'cwTeXFangSong', serif;
+    font-size: 1.5em;
+}
+
+.item-text-small{
+    /* 宋體 */
+    font-family: 'cwTeXFangSong', serif;
+    font-size: 1em;
+}
+
+.contact{
+    font-size: 0.8em;
+}
+
+@media screen and (max-width: 500px) {
+    .contact{
+        font-size: 2.5vw;
+    }
+}
+
+/* 響應式(螢幕高)控制隱藏菜單顯示長度 */
+@media screen and (max-height: 500px) {
+    .menu-option-wapper{
+        max-height: 15vw;
+    }
+    .hidden-menu-title-container{
+        min-height: 80px;
+    }
+    .hidden-menu-title-container span{
+        font-size: 2vw;
+    }
+    .hidden-option-btn span {
+        font-size: 1.5vw;
+    }
+    .hidden-dropdown span{
+        font-size: 1.5vw;
+    }
+    .contact{
+        font-size: 1vw;
+    }
+    .hidden-menu-option-container ul{
+        margin-bottom: -15px;
+    }
+    .hidden-menu-text-container li{
+        line-height: 15px;
+    }
+    
+}

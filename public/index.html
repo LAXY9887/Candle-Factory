@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+
+	<!--設定-->
+	<meta charset="UTF-8">
+
+	<!-- 將初始寬度設定成裝置大小-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- 瀏覽器就不會收集用戶的瀏覽行 -->
+	<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+	<!-- 引入 CSS 文件 -->
+	<link rel="stylesheet" href="css/main.css">                 <!-- 主頁面 CSS -->
+	<link rel="stylesheet" href="css/global_font.css">          <!-- 全局字體設定 -->
+	<link rel="stylesheet" href="css/top_mobile_header.css">    <!-- 上方固定式橫條 -->
+	<link rel="stylesheet" href="css/main_image_design.css">    <!-- 首頁形象圖片 -->
+	<link rel="stylesheet" href="css/imageWall.css">            <!-- 照片牆 -->
+	<link rel="stylesheet" href="css/product_section.css">      <!-- 產品專區 -->
+	<link rel="stylesheet" href="css/infomation_card.css">      <!-- 產品資訊卡-->
+	<link rel="stylesheet" href="css/footer.css">               <!-- 網頁頁尾-->
+	<link rel="stylesheet" href="css/hidden_menu.css">          <!-- 隱藏式菜單-->
+	<link rel="stylesheet" href="css/product_intro.css">		<!-- 產品介紹-->
+
+	<!-- 控制 : 假如在別的頁面點選了"產品專區"則開啟 scroll (後面會關掉 : line-367) -->
+	<script src="javascripts/handle_page_switch.js"></script>   <!-- 網頁載入時執行, 放在 head-->
+
+	<!--標題-->
+	<title>重光企業社 - 手工蠟燭 - 傳統斗燭</title>
+
+</head>
+<body>
+
+	<!--開場動畫畫布-->
+	<div id="fireCanvas_backGround" class="fireCanvas_BG">
+		<canvas id="fireCanvas"></canvas>
+	</div>
+	
+	<!--頁面的容器-->
+	<div class="main-page">
+
+		<!-- 上方移動式橫條 -->
+		<div class="top-mobile-header">
+
+			<!-- Wraper-->
+			<div class="top-mobile-header-wrapper">
+
+				<!-- LOGO -->
+				<div class="logo-container">
+
+					<!-- LOGO image-->
+					<a href="index.html">
+						<img class="logo-desktop" src="image/Logo.png" alt="desktop logo png">
+					</a>
+
+					<a href="index.html">
+						<img class="logo-mobile" src="image/Logo icon.png" alt="mobile logo png">
+					</a>
+
+				</div>
+
+				<!-- 功能按鈕-->
+				<div class="function-btn-container">
+
+					<div class="button-list-container">
+
+						<!-- 第一組 -->
+						<div></div>
+
+						<a href="intro_page.html" target="_blank">
+							<div>
+								<span class="function-btn-text">工廠介紹</span>
+							</div>
+						</a>
+
+						<div></div>
+
+						<!-- 第二組 -->
+						<div></div>
+
+						<div id="scrollButton">
+							<span class="function-btn-text">產品列表</span>
+						</div>
+
+						<div></div>
+
+						<!-- 第三組 -->
+						<div></div>
+
+						<a href="contact_us_page.html" target="_blank">
+							<div>
+								<span class="function-btn-text">聯絡我們</span>
+							</div>
+						</a>
+
+						<div></div>
+
+					</div>
+
+					<!--隱藏式選單按鈕-->
+					<div id="hidden-menu-btn" class="list-icon-btn-container">
+						<div class="icon-img-container">
+							<img src="image/list icon.png" alt="list-icon png">
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- 首頁形象圖樣 -->
+		<div class="main-image-container">
+
+			<!--形象圖-->
+			<div class="main-image-figure">
+
+				<!--圖-->
+				<img  src="image/main image large.png"/>
+
+			</div>
+
+			<!-- 標語容器 -->
+			<div class="slogan-container">
+
+				<!--標語旁圖(左)-->
+				<div class="slogan-image">
+
+					<img src="image/candle sprite1.png">
+
+				</div>
+
+				<!-- 標語 -->
+				<div class="slogan-text">
+
+					<span><span class="emphesize-text">重</span>燭烈焰薪不滅</span>
+
+					<br>
+
+					<span><span class="emphesize-text">光</span>射四方暖萬家</span>
+
+				</div>
+
+				<!--標語旁圖(右)-->
+				<div class="slogan-image">
+
+					<img src="image/candle sprite2.png">
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<!-- 企業名稱 + 分隔 -->
+		<div class="company-name-spacer">
+
+			<!--公司名稱-->
+			<div class="company-name">
+				<span>&nbsp;重光企業社</span>
+
+				<!--裝飾線條-->
+				<div class="decoration-container">
+
+					<!--線條-->
+					<div class="decoration-container-line"><hr></div>
+
+					<!--點-->
+					<div class="decoration-container-dot">
+						<canvas id="deco-diamond"></canvas>
+					</div>
+
+					<!--線條-->
+					<div class="decoration-container-line"><hr></div>
+					
+				</div>
+			</div>
+		</div>
+
+		<!-- 照片牆-->
+		<div class="image-wall-wraper">
+
+			<!-- 圖片容器 -->
+			<div id="imageWall" class="imageWall-container">
+
+				<!-- 切換圖片按鈕 -->
+				<!-- 右 -->
+				<button id="right-switch-btn" class="changeImageBTN"></button>
+				<!-- 左 -->
+				<button id="left-switch-btn" class="changeImageBTN"></button>
+
+				<!-- 圖片/ 由腳本加入 -->
+				<!--點點包裝-->
+				<div id="dot-container" class="image-wall-dot-container"></div>
+
+				<div id="dot-track" class="image-wall-dot-moving-track"></div>
+
+			</div>
+
+		</div>
+
+		<!--產品專區-->
+		<div class="product-section">
+
+			<!--標題-->
+			<h1 id="targetElement" class="product-section-title">產品專區</h1>
+
+			<!--分隔線-->
+			<hr class="product-section-line">
+
+			<!-- 功能按鈕-->
+			<div class="product-function-btn-container">
+
+				<div class="product-button-list-container">
+					<!-- 由 javascript 從 JSON 動態生成 -->
+				</div>
+
+			</div>
+
+			<!--分隔線-->
+			<hr class="product-section-line">
+
+			<!-- 產品介紹區塊：由 javascript 從 JSON 動態生成 -->
+
+			<!--資訊卡容器-->
+			<div class="infomation-card-container">
+
+				<!--資訊卡1-->
+				<div class="infomation-card-wraper" id="id-0">
+
+					<!--圖1-->
+					<div class="image-card-frame">
+
+						<!--圖片文字包裝-->
+						<div class="image-text-wraper">
+
+							<!--圖片-->
+							<img src="image/red cup candle1.png" alt="infomation card picture1">
+
+							<!--文字-->
+							<div class="infoText">
+								<div class="info-Text-container">
+									<span class="infoCard-title">
+										產品 0 - 0
+									</span>
+									<br> <!--換行-->
+									<p class="infoCard-context">
+										這裡會寫簡短的產品簡介或資訊,
+										點擊後會顯示詳細資訊
+									</p>
+									<br> <!--換行-->
+									<p class="infoCard-context">
+										價錢: 100 規格 5 個
+									</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+
+				<!-- 之後 N 個透過 javascript 以第一個為模板新增-->
+
+			</div>
+
+		</div>
+
+		<!-- 隱藏菜單 -->
+		<div id="hidden-menu-pannel" class="hidden-menu" tabindex="1">
+
+			<!--Menu Title-->
+			<div class="hidden-menu-title-container">
+				<span class="label-text titleSize-text">產品列表</span>
+			</div>
+
+			<!--a Line-->
+			<hr>
+
+			<!--Menu option container-->
+			<div class="menu-option-wapper">
+
+				<!-- 由 javascript 加入 -->
+
+			</div>
+
+			<!--聯絡資訊區塊-->
+			<div class="hidden-menu-text-container">
+
+				<hr><!--a Line-->
+
+				<span id="contact-text-title" class="contact">聯絡資訊</span>
+				<ul class="hidden-contactInfo">
+                    <li>
+                        <span class="contact">電話(公司)：04-7372790 </span>
+                    </li>
+                    <li>
+                        <span class="contact">電話(住家)：04-7279724 </span>
+                    </li>
+                    <li>
+                        <span class="contact">地址：彰化市國聖里聖安路220號</span>
+                    </li>
+                </ul>
+			</div>
+
+		</div>
+
+	</div>
+
+	<!-- 外掛腳本 -->
+	<script src="javascripts/jquery.js"></script>                    <!-- jQuery 動畫 -->
+	<!-- 自製腳本 -->
+	<script src="javascripts/imageWall_behavior.js"></script>        <!-- Image wall 腳本 -->
+	<script src="javascripts/infoCard_generation.js"></script>       <!-- 產生重複性的資訊卡-->
+	<script src="javascripts/scroll_to_target.js"></script>          <!-- 點擊滑動至特定元素-->
+	<script src="javascripts/hidden_menu_list_function.js"></script> <!-- 右側隱藏菜單及列表功能-->
+	<script src="javascripts/draw_diamond.js"></script>				 <!-- 畫菱形 -->
+	<script src="javascripts/flickering_op.js"></script>			 <!-- 開場動畫-->
+	
+	<!-- 清空 localStorage 以及將 scroll 關閉-->
+	<script>
+
+		localStorage.clear();
+		localStorage.setItem('scroll', false);           // 控制滑動
+		localStorage.setItem('display_class', 'none');   // 控制顯示哪一類別
+		localStorage.setItem('display_target', 'none');  // 控制顯示哪一項產品
+		localStorage.setItem('display_intro', 'none');	 // 控制顯示哪一項產品介紹
+
+	</script>
+
+	<!--firebase-->
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js";
+		// TODO: Add SDKs for Firebase products that you want to use
+		// https://firebase.google.com/docs/web/setup#available-libraries
+	  
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+		  apiKey: "AIzaSyDHE4grjzg3kwHquOWDjwCguIroHP98zTk",
+		  authDomain: "candle-factory-website.firebaseapp.com",
+		  projectId: "candle-factory-website",
+		  storageBucket: "candle-factory-website.appspot.com",
+		  messagingSenderId: "101890742739",
+		  appId: "1:101890742739:web:5b2c687b06a2164d6c7726"
+		};
+	  
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+	  </script>
+	
+</body>
+
+</html>
+
+<!--頁尾-->
+<footer>
+	<div class="footer-container">
+
+		<!--Wrapper-->
+		<div class="footer-wraper">
+
+			<!--聯絡資訊容器-->
+			<div class="footer-contact-container">
+
+				<!--聯絡資訊title-->
+				<div class="footer-contact-title">
+					<span>聯絡資訊</span>
+				</div>
+
+				<!--一條線-->
+				<hr>
+
+				<!--聯絡資訊list-->
+				<div class="footer-contact-list">
+
+					<!--列表-->
+                    <ul>
+                        <li>電話(公司):04-7372790</li>
+                        <li>電話(住家):04-7279724</li>
+                        <li>地址:彰化市國聖里聖安路220號</li>
+                    </ul>
+
+				</div>
+
+
+			</div>
+
+			<!--谷歌地圖容器-->
+            <div class="footer-googlemap-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3642.3349258814933!2d120.5724143!3d24.089714499999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346938d8487382dd%3A0xb6730df73287d54f!2zNTAw5b2w5YyW57ij5b2w5YyW5biC6IGW5a6J6LevMjIw6Jmf!5e0!3m2!1szh-TW!2stw!4v1714033139662!5m2!1szh-TW!2stw" 
+                width="100%" height="100%" style="border:none;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+		</div>
+
+		<!--版權聲明-->
+		<div class="copy-right-container">
+			<span class="copy-right-text">版權所有 © 重光企業社</span>
+		</div>
+
+	</div>
+</footer>
