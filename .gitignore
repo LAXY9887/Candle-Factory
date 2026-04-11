@@ -4,6 +4,20 @@ Assets/*
 Assets/data/*
 !Assets/data/產品清單.csv
 
+# Nuxt 3
+.nuxt/
+.output/
+.data/
+.nitro/
+.cache/
+dist/
+nuxt.d.ts
+
+# Node / pnpm
+*.log
+.pnpm-debug.log*
+.pnpm-store/
+
 # Firebase
 .firebase/
 firebase-debug.log
@@ -24,6 +38,7 @@ desktop.ini
 
 # Editor
 .vscode/
+.claude/
 *.swp
 *~
 
