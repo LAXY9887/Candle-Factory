@@ -77,61 +77,67 @@ const { getProductBySlug } = useProducts()
 
 const slug = computed(() => route.params.slug as string)
 const product = computed(() => getProductBySlug(slug.value))
-const detail = computed(() => (product.value ? productDetails[product.value.title] : undefined))
+const detail = computed(() =>
+  product.value ? productDetails[product.value.title] : undefined,
+)
 
-// SEO
-if (product.value) {
+const siteUrl = 'https://candle-factory-website.web.app'
+
+// SEO meta
+useSeoMeta({
+  title: () =>
+    product.value
+      ? `${product.value.title} - 重光企業社 | 彰化傳統手工蠟燭・斗燭`
+      : '產品 - 重光企業社',
+  description: () => detail.value?.tagline ?? product.value?.description ?? '',
+  ogTitle: () =>
+    product.value ? `${product.value.title} - 重光企業社` : '',
+  ogDescription: () =>
+    detail.value?.tagline ?? product.value?.description ?? '',
+  ogImage: () =>
+    product.value ? `${siteUrl}/${product.value.image}` : '',
+  ogUrl: () => `${siteUrl}/products/${slug.value}`,
+  twitterCard: 'summary_large_image',
+})
+
+// Product JSON-LD 透過 useHead 注入
+const productJsonLd = computed(() => {
   const p = product.value
   const d = detail.value
-  const siteUrl = 'https://candle-factory-website.web.app'
+  if (!p) return ''
 
-  useSeoMeta({
-    title: `${p.title} - 重光企業社 | 彰化傳統手工蠟燭・斗燭`,
-    description: d?.tagline ?? p.description,
-    ogTitle: `${p.title} - 重光企業社`,
-    ogDescription: d?.tagline ?? p.description,
-    ogImage: `${siteUrl}/${p.image}`,
-    ogUrl: `${siteUrl}/products/${slug.value}`,
-    twitterCard: 'summary_large_image',
-  })
-
-  // Product schema.org JSON-LD
-  useHead({
-    script: [
-      {
-        type: 'application/ld+json',
-        innerHTML: JSON.stringify({
-          '@context': 'https://schema.org',
-          '@type': 'Product',
-          name: p.title,
-          description: d?.detail ?? p.description,
-          image: `${siteUrl}/${p.image}`,
-          category: p.category,
-          brand: {
-            '@type': 'Brand',
-            name: '重光企業社 Chong Guang',
-          },
-          offers: {
-            '@type': 'Offer',
-            priceCurrency: 'TWD',
-            availability: 'https://schema.org/InStock',
-            url: `${siteUrl}/products/${slug.value}`,
-            seller: {
-              '@type': 'LocalBusiness',
-              name: '重光企業社',
-            },
-          },
-        }),
+  return JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: p.title,
+    description: d?.detail ?? p.description,
+    image: `${siteUrl}/${p.image}`,
+    category: p.category,
+    brand: {
+      '@type': 'Brand',
+      name: '重光企業社 Chong Guang',
+    },
+    offers: {
+      '@type': 'Offer',
+      priceCurrency: 'TWD',
+      availability: 'https://schema.org/InStock',
+      url: `${siteUrl}/products/${slug.value}`,
+      seller: {
+        '@type': 'LocalBusiness',
+        name: '重光企業社',
       },
-    ],
+    },
   })
-}
+})
 
-// Prerender 需要所有產品的路徑
-definePageMeta({
-  // Nuxt 會自動為每個 [slug] 在 crawl 時發現的連結 prerender
-  // 但我們需要確保產品列表頁有連結指向每個產品頁。
-  // 為了保險，在 nuxt.config.ts 的 nitro hooks 裡手動加入路徑。
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: () => productJsonLd.value,
+      tagPosition: 'bodyClose',
+    },
+  ],
 })
 </script>
 

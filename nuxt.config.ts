@@ -1,9 +1,29 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import productsData from './data/products.json'
 
-// 產生所有產品頁的 prerender 路徑
+// 中文 title → ASCII slug（與 utils/slug.ts 的 titleToSlugMap 同步）
+// 使用 ASCII 避開 Nuxt 3.21 對中文 dynamic route prerender 的 bug
+const titleToSlug: Record<string, string> = {
+  佛杯: 'fobei',
+  五號蓮花: '5hao-lianhua',
+  '2號立體蓮花': '2hao-liti-lianhua',
+  '5號旺來': '5hao-wanglai',
+  '3號旺來': '3hao-wanglai',
+  '2號旺來(B)': '2hao-wanglai-b',
+  '1號旺來(B)': '1hao-wanglai-b',
+  '10斤旺來': '10jin-wanglai',
+  '20斤旺來': '20jin-wanglai',
+  '5號葫蘆': '5hao-hulu',
+  '3號葫蘆': '3hao-hulu',
+  '2號葫蘆': '2hao-hulu',
+  '1號葫蘆': '1hao-hulu',
+  一斤斗燭: '1jin-douzhu',
+  二斤斗燭: '2jin-douzhu',
+  三斤斗燭: '3jin-douzhu',
+}
+
 const productRoutes = (productsData.products as Array<{ title: string }>).map(
-  (p) => `/products/${encodeURIComponent(p.title.replace(/\s+/g, '-').toLowerCase())}`,
+  (p) => `/products/${titleToSlug[p.title] ?? p.title.replace(/\s+/g, '-').toLowerCase()}`,
 )
 
 export default defineNuxtConfig({
@@ -27,7 +47,7 @@ export default defineNuxtConfig({
     },
   },
 
-  // 網站基本資訊（給 @nuxtjs/seo 用）
+  // 網站基本資訊
   site: {
     url: 'https://candle-factory-website.web.app',
     name: '重光企業社',
@@ -64,32 +84,27 @@ export default defineNuxtConfig({
     },
   },
 
-  // 全域 CSS（從 legacy/public/css/ 搬來，放在 styles/ 避開 Assets/ 大小寫衝突）
+  // 全域 CSS
   css: [
-    '~/styles/global_font.css', // 字體（最優先載入）
-    '~/styles/main.css', // 主版面
-    '~/styles/top_mobile_header.css', // 頂部 header
-    '~/styles/main_image_design.css', // 首頁形象圖
-    '~/styles/imageWall.css', // 照片牆
-    '~/styles/product_section.css', // 產品專區
-    '~/styles/product_intro.css', // 產品分類介紹
-    '~/styles/infomation_card.css', // 產品資訊卡
-    '~/styles/hidden_menu.css', // 隱藏選單
-    '~/styles/intro_page.css', // 工廠介紹頁
-    '~/styles/site_footer.css', // 現代化頁尾 (Phase 3 新增)
+    '~/styles/global_font.css',
+    '~/styles/main.css',
+    '~/styles/top_mobile_header.css',
+    '~/styles/main_image_design.css',
+    '~/styles/imageWall.css',
+    '~/styles/product_section.css',
+    '~/styles/product_intro.css',
+    '~/styles/infomation_card.css',
+    '~/styles/hidden_menu.css',
+    '~/styles/intro_page.css',
+    '~/styles/site_footer.css',
   ],
 
   // 模組
-  modules: [
-    // Phase 0 先不載入任何模組，確認骨架能跑之後再加
-    // '@nuxtjs/seo',
-    // '@nuxt/image',
-    // '@vueuse/nuxt',
-  ],
+  modules: [],
 
   // TypeScript 嚴格模式
   typescript: {
     strict: true,
-    typeCheck: false, // Phase 0 先關閉，避免阻塞開發
+    typeCheck: false,
   },
 })

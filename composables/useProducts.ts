@@ -25,7 +25,9 @@ export const useProducts = () => {
 
   /** 依 slug 取得單一產品 */
   const getProductBySlug = (slug: string): Product | undefined => {
-    return products.find((p) => toSlug(p.title) === slug)
+    const title = fromSlug(slug)
+    if (!title) return undefined
+    return products.find((p) => p.title === title)
   }
 
   /** 所有產品的 slug 清單（給 prerender 用） */

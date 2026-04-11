@@ -94,8 +94,6 @@
       <span class="footer-credit">Made in Changhua, Taiwan</span>
     </div>
 
-    <!-- LocalBusiness 結構化資料 (SEO) -->
-    <component :is="'script'" type="application/ld+json" v-html="localBusinessJsonLd" />
   </footer>
 </template>
 
@@ -134,5 +132,16 @@ const localBusinessJsonLd = JSON.stringify({
   ],
   priceRange: '$',
   description: '彰化重光企業社 — 傳承傳統手工蠟燭與斗燭製作工藝，專供拜拜、祭祀、宗教儀式所需蠟燭。',
+})
+
+// 使用 useHead 注入 JSON-LD（SSR 會渲染到 <head>）
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: localBusinessJsonLd,
+      tagPosition: 'bodyClose',
+    },
+  ],
 })
 </script>
