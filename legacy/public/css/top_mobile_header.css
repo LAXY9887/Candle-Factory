@@ -1,0 +1,147 @@
+
+/* 頂部移動式橫條 */
+.top-mobile-header{
+
+    /* 長寬 */
+    height: 4vw;
+    width: 100%;
+
+    /* 固定於上方 */
+    position: fixed;
+    top: 0;
+
+    /* 顏色 */
+    background-color: rgb(255, 201, 201);
+
+    /*設定堆疊(不被擋住)*/ 
+    z-index: 1500;
+
+    /*布局置中*/
+    display: flex;
+    align-items: center;
+}
+
+/* 頂部固定式橫條 - 響應螢幕大小 */
+@media screen and (max-width: 1200px) {
+    .top-mobile-header{
+        height: 6vw;
+    }
+}
+
+/* 頂部固定式橫條 - 響應螢幕大小(手機) */
+@media screen and (max-width: 500px) {
+    .top-mobile-header{
+        height: 10vw;
+    }
+}
+
+/* 包裝:LOGO容器, 功能按鈕容器 */
+.top-mobile-header-wrapper{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* LOGO容器 */
+.logo-container {
+    /* 長寬 */
+    height: 100%;
+    width: 20%;
+
+    /*左間隙*/
+    margin-left: 0.5vw;
+}
+
+.logo-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* 響應式 */
+.logo-mobile {
+    display: none; /*預設關閉小LOGO*/
+}
+
+/* 響應式 - 螢幕小於 700 px 關閉原本的圖片, 開啟小LOGO */
+@media screen and (max-width: 700px) {
+    .logo-container {
+        width: 10%; /*進一步縮小容器*/
+    }
+    .logo-mobile{
+        display: block;
+    }
+    .logo-desktop{
+        display: none;
+    }
+}
+
+/* 功能按鈕容器 */
+.function-btn-container {
+
+    /* 長寬 */
+    height: 100%;
+    width: inherit;
+
+    /* 布局*/
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*功能按鈕列表*/
+.button-list-container{
+
+    /* 長寬 */
+    height: fit-content;
+    width: fit-content;
+
+    /*右間隙*/
+    margin-right: 1.5vw;
+
+    /*Grid表格*/
+    display: grid;
+    grid-template-columns: repeat(3, 0.5fr 1.2fr 0.5fr); /*設定欄位數量,大小*/
+}
+
+/*控制按鈕字體大小*/
+.function-btn-text{
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer; /*鼠標*/
+    white-space:nowrap;
+}
+
+/*變色*/
+.function-btn-text:hover{
+    color: rgb(78, 35, 234);
+}
+
+/* 控制按鈕字體大小 - 響應螢幕大小 */
+@media screen and (max-width: 800px) {
+    .function-btn-text{
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .function-btn-text{
+        font-size: 0.8em;
+    }
+}
+
+/*List icon button*/
+.list-icon-btn-container{
+    width: 8%;
+    height: 100%;
+    margin-right: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.list-icon-btn-container:hover{
+    border: 0.2vw solid rgb(171, 26, 26);
+}

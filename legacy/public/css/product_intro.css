@@ -1,0 +1,90 @@
+.product-intro-container{
+    width: 100%;
+    height: 25vw;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3vw;
+    transition: all 0.5s;
+}
+
+.product-intro-context{
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-intro-figure{
+    width: 50%;
+    height: 100%;
+    border: 0.3vw solid rgb(92, 92, 92);
+    box-shadow: 2px 3px 0.8vw 0.1vw black;
+    margin-right: 2vw;
+}
+.product-intro-figure img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.product-intro-text{
+    width: 50%;
+    height: 100%;
+}
+.product-intro-text p{
+    font-size: 1.5vw;
+    letter-spacing: 0.5vw;
+    line-height: 2vw;
+    text-align: justify;
+}
+
+/*響應式變化 (縮小)*/
+@media screen and (max-width: 800px) {
+    .product-intro-container{
+        height: 65vw;
+    }
+    .product-intro-context{
+        flex-direction: column;
+        width: 100%;
+    }
+    .product-intro-figure{
+        height: 45vw;
+        margin-top: 3vw;
+    }
+    .product-intro-text{
+        width: 90%;
+        margin-top: 3vw;
+    }
+    .product-intro-text p{
+        font-size: 2vw;
+        letter-spacing: 0.3vw;
+        line-height: 3.2vw;
+    }
+}
+/*響應式變化 (手機)*/
+@media screen and (max-width: 500px) {
+    .product-intro-container{
+        height: 90vw;
+    }
+    .product-intro-figure{
+        width: 75%;
+        height: 50vw;
+        margin-top: 3vw;
+    }
+    .product-intro-context{
+        flex-direction: column;
+        width: 100%;
+    }
+    .product-intro-text{
+        width: 90%;
+        margin-top: 3vw;
+    }
+    .product-intro-text p{
+        font-size: 3vw;
+        letter-spacing: 0.05vw;
+        line-height: 4.2vw;
+    }
+}

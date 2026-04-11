@@ -1,0 +1,86 @@
+/*html*/
+
+/*body*/
+body {
+    margin: 0px;
+    background-color: rgb(105, 3, 3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 移除 overflow: hidden：原本配合 legacy 開場動畫 JS 解鎖，
+       Nuxt SSG + ClientOnly 時機不穩會導致頁面無法捲動 */
+}
+
+/*頁尾*/
+footer{
+    width: 100%;
+}
+
+/*開場動畫*/
+#fireCanvas_backGround{
+    width: 100%;
+    background-color: black;
+    position: absolute;
+    z-index: 2000;
+}
+.fireCanvas_BG{
+    opacity: 1;
+    height: 100%;
+    transition: all 0.3s;
+}
+.fireCanvas_BG.close{
+    opacity: 0;
+    height: 0;
+}
+
+/*包裹整個頁面 (控制-置中)*/
+.main-page{
+    width: 90%;
+    height: fit-content; 
+    margin: 4.5vw 0 5vw 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3vw;
+    box-shadow: 0 0 3vw 0.5vw; /*外邊浮空效果*/
+}
+/*響應式變化上方空間*/
+@media screen and (max-width: 1200px) {
+    .main-page{
+        margin-top: 7vw;
+    }
+}
+@media screen and (max-width: 500px) {
+    .main-page{
+        margin-top: 12vw;
+    }
+}
+
+/*超連結不要變色和不要底線*/
+a {
+    text-decoration: none; /*底線*/
+    color: black;
+}
+
+/*icon圖片和容器*/
+.icon-img-container{
+    width: 3vw;
+    height: 3vw;
+}
+
+.icon-img-container img{
+    width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+/*響應式變化icon圖片和容器 (手機)*/
+@media screen and (max-width: 500px) {
+    .icon-img-container{
+        width: 4.2vw;
+        height: 4.2vw;
+    }
+}
