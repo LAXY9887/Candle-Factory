@@ -21,6 +21,7 @@ export default defineNuxtConfig({
         '/intro',
         '/contact',
         '/privacy',
+        '/sitemap.xml',
         ...productRoutes,
       ],
     },
