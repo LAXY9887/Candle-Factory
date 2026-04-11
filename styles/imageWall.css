@@ -1,0 +1,96 @@
+/*動態圖片牆*/
+
+/* 照片牆 */ 
+.image-wall-wraper{
+    height: 40vw;
+    width: 100%;
+    position: relative;
+}
+
+/* 設定圖片容器的大小 */
+.imageWall-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;  
+    position: relative; 
+    object-fit: contain;
+    object-position: right bottom;
+    display: flex;
+    justify-content: center;
+}
+
+/* 設定圖片的大小 */
+.wall-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    position: absolute;
+}
+
+/* 設置按鈕的樣式 */
+.changeImageBTN {
+    width: 15%;
+    height: 100%;
+    background: #f5f5f5b8;
+    border: none;
+    cursor: pointer;
+    position: absolute; 
+    z-index: 2; /* 設置堆疊顺序为2 (上) */
+    opacity: 0;
+    transition: all 0.5s;
+    box-shadow: 0 0 100px 100px rgb(255 255 255 / 70%); /*模糊效果*/
+}
+.changeImageBTN:hover{
+    opacity: 0.5;
+}
+
+/* 設置按鈕的樣式 右 */
+#right-switch-btn {
+    right: 0;
+}
+
+/* 設置按鈕的樣式 左 */
+#left-switch-btn {
+    left: 0;
+}
+
+/*點點*/
+.image-wall-dot-container{
+    width: fit-content; 
+    height: fit-content; 
+    position: absolute; 
+    bottom: 5%;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wall-dot-moving-track{
+    position: absolute; 
+    bottom: 5%;
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+}
+
+.image-wall-dot{
+    width: 1vw; 
+    height: 1vw; 
+    background-color: gray; 
+    border-radius: 60px;
+    z-index: 4;
+    margin-right: 10px;
+}
+
+.image-wall-moving-dot{
+    width: 1vw; 
+    height: 1vw; 
+    background-color: white; 
+    border-radius: 60px;
+    z-index: 4;
+    margin-right: 10px;
+    opacity: 0;
+}
+
+/* 點點 - 響應螢幕大小 */

@@ -50,11 +50,19 @@ export default defineNuxtConfig({
     },
   },
 
-  // 全域 CSS（Phase 2 會把 legacy/public/css/ 搬到 assets/css/）
+  // 全域 CSS（從 legacy/public/css/ 搬來，放在 styles/ 避開 Assets/ 大小寫衝突）
   css: [
-    // '~/assets/css/main.css',
-    // '~/assets/css/global_font.css',
-    // ...
+    '~/styles/global_font.css', // 字體（最優先載入）
+    '~/styles/main.css', // 主版面
+    '~/styles/top_mobile_header.css', // 頂部 header
+    '~/styles/main_image_design.css', // 首頁形象圖
+    '~/styles/imageWall.css', // 照片牆
+    '~/styles/product_section.css', // 產品專區
+    '~/styles/product_intro.css', // 產品分類介紹
+    '~/styles/infomation_card.css', // 產品資訊卡
+    '~/styles/hidden_menu.css', // 隱藏選單
+    '~/styles/intro_page.css', // 工廠介紹頁
+    '~/styles/footer.css', // 舊版頁尾樣式（Phase 3 會重寫）
   ],
 
   // 模組

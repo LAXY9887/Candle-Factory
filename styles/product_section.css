@@ -1,0 +1,46 @@
+/*產品專區*/
+.product-section{
+    width: 100%;
+    height: fit-content;
+    margin-top: 1.5vw;
+}
+
+/*標題*/
+.product-section-title{
+    display: flex;
+    justify-content: center;
+    font-size: 4vw;
+}
+
+/*標題底下的線*/
+.product-section-line{
+    border: none; 
+    border-top: 2px solid gray; 
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+}
+
+/* 功能按鈕容器 */
+.product-function-btn-container {
+
+    /* 長寬 */
+    height: fit-content;
+    width: inherit;
+
+    /* 布局*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*功能按鈕列表*/
+.product-button-list-container{
+
+    /* 長寬 */
+    height: fit-content;
+    width: fit-content;
+
+    /*Grid表格*/
+    display: grid;
+    grid-template-columns: repeat(5, 2fr 1.2fr 2fr); /*設定欄位數量,大小*/
+}

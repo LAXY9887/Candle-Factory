@@ -1,0 +1,87 @@
+/* 頁尾 */
+.footer-container{
+    height: 25vw;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    background-color: rgb(213, 213, 213);
+}
+
+/*Wrapper*/
+.footer-wraper{
+    width: 100%;
+    height: inherit;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/*聯絡資訊容器*/
+.footer-contact-container{
+    width: 40%;
+    height: inherit;
+}
+.footer-contact-container hr{
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    border: none;
+    border-top: 0.4vw solid rgb(99, 99, 99);
+}
+
+/*聯絡我們-標題*/
+.footer-contact-title{
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2vw;
+}
+/*聯絡我們-標題文字*/
+.footer-contact-title span{
+    font-size: 4vw;
+    color: rgb(99, 99, 99);
+}
+
+/*聯絡我們-列表*/
+.footer-contact-list{
+    width: 100%;
+    height: fit-content;
+}
+/*聯絡我們-列表文字*/
+.footer-contact-list ul{
+    margin: 0;
+    padding: 0;
+}
+.footer-contact-list li{
+    font-size: 2vw;
+    color: rgb(99, 99, 99);
+    margin-bottom: 1vw;
+}
+
+/*Google地圖容器*/
+.footer-googlemap-container{
+    width: 40%;
+    height: 90%;
+    margin: 1.5vw 0 1.5vw 0; /*上、右、下、左*/
+}
+
+/*版權聲明*/
+.copy-right-container{
+    width: 100%;
+    height: 2vw;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*版權聲明文字*/
+.copy-right-text{
+    color: white;
+    font-weight: lighter;
+    font-size: 0.8em;
+}
+
+/* 版權聲明字體大小 - 響應螢幕大小(手機) */
+@media screen and (max-width: 500px) {
+    .copy-right-text{
+        font-size: 2vw;
+    }
+}
