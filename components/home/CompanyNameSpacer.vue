@@ -9,8 +9,7 @@
           <hr>
         </div>
         <div class="decoration-container-dot">
-          <!-- Phase 6: DecoDiamond.vue (client-only canvas) -->
-          <canvas id="deco-diamond"></canvas>
+          <EffectsDecoDiamond />
         </div>
         <div class="decoration-container-line">
           <hr>

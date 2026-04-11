@@ -59,10 +59,5 @@
 </template>
 
 <script setup lang="ts">
-// Phase 6 會建立 useHiddenMenu composable 讓 HiddenMenu.vue 用
-// 目前先用 stub
-const toggleMenu = () => {
-  const menu = document.getElementById('hidden-menu-pannel')
-  if (menu) menu.classList.toggle('show')
-}
+const { toggle: toggleMenu } = useHiddenMenu()
 </script>

@@ -1,5 +1,8 @@
 <template>
   <div>
+    <!-- 0. 開場動畫 (只在首頁) -->
+    <EffectsFlickeringCanvas />
+
     <!-- 1. 首頁形象圖 + 標語 -->
     <HomeMainImageHero />
 
