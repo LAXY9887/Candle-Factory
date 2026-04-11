@@ -1,4 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import productsData from './data/products.json'
+
+// 產生所有產品頁的 prerender 路徑
+const productRoutes = (productsData.products as Array<{ title: string }>).map(
+  (p) => `/products/${encodeURIComponent(p.title.replace(/\s+/g, '-').toLowerCase())}`,
+)
+
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
@@ -9,7 +16,13 @@ export default defineNuxtConfig({
     preset: 'static',
     prerender: {
       crawlLinks: true,
-      routes: ['/'],
+      routes: [
+        '/',
+        '/intro',
+        '/contact',
+        '/privacy',
+        ...productRoutes,
+      ],
     },
   },
 

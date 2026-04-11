@@ -1,20 +1,23 @@
 /**
- * 將產品標題轉為 URL 友善的 slug
+ * 將產品標題轉為可用於 URL 的識別鍵（不做 URL encoding）
  *
- * 為了與舊版相容（舊版用 encodeURIComponent），
- * 產出中文的 URL-safe 編碼。之後若要改用羅馬拼音 slug，
- * 只要改這一個函式即可。
+ * 設計決策：
+ *   回傳解碼狀態的字串（含中文字元），因為：
+ *   1. Vue Router 的 <NuxtLink :to="..."> 會自動處理 URL encoding
+ *   2. route.params.slug 會自動 decode，所以比對時用原字元最乾淨
+ *   3. Google Search Console 現在完全支援中文 URL
  *
  * @example
- *   toSlug('10斤旺來') // -> '10%E6%96%A4%E6%97%BA%E4%BE%86'
+ *   toSlug('10斤旺來')  // -> '10斤旺來'
+ *   toSlug('1號旺來(B)') // -> '1號旺來(b)'
  */
 export const toSlug = (title: string): string => {
-  return encodeURIComponent(title.replace(/\s+/g, '-').toLowerCase())
+  return title.replace(/\s+/g, '-').toLowerCase()
 }
 
 /**
- * slug 反解為可顯示字串
+ * 用於 nuxt.config.ts prerender 的 URL encoded 版本
  */
-export const fromSlug = (slug: string): string => {
-  return decodeURIComponent(slug)
+export const toUrlSlug = (title: string): string => {
+  return encodeURIComponent(toSlug(title))
 }
