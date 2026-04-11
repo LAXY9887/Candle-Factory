@@ -7,7 +7,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow: hidden; /*  開場禁止捲動 */
+    /* 移除 overflow: hidden：原本配合 legacy 開場動畫 JS 解鎖，
+       Nuxt SSG + ClientOnly 時機不穩會導致頁面無法捲動 */
 }
 
 /*頁尾*/

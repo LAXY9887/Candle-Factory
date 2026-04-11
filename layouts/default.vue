@@ -15,6 +15,17 @@
 </template>
 
 <script setup lang="ts">
-// Phase 6: layout 現在包含 HiddenMenu
-// Phase 6 沒把 FlickeringCanvas 放 layout 是因為它只應該在首頁出現
+// body 是 display:flex / flex-direction:column / align-items:center
+// .layout-default 需要 100% 寬度讓內部元素能正確伸展，
+// 否則 .main-page (90%) 和 footer (100%) 會收斂到 auto 寬度
 </script>
+
+<style>
+.layout-default {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+</style>

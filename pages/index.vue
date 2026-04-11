@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- 0. 開場動畫 (只在首頁) -->
-    <EffectsFlickeringCanvas />
+    <!-- 開場動畫暫時停用：SSG hydration 時機問題導致黑屏卡住
+         <EffectsFlickeringCanvas /> -->
 
     <!-- 1. 首頁形象圖 + 標語 -->
     <HomeMainImageHero />
