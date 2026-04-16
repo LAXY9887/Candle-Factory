@@ -10,7 +10,7 @@ Assets/data/*
 .data/
 .nitro/
 .cache/
-dist/
+dist
 nuxt.d.ts
 
 # Node / pnpm
