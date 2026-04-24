@@ -100,7 +100,11 @@ export default defineNuxtConfig({
   ],
 
   // 模組
-  modules: [],
+  modules: ['nuxt-gtag'],
+
+  gtag: {
+    id: 'G-RZH9MFRD9W',
+  },
 
   // TypeScript 嚴格模式
   typescript: {

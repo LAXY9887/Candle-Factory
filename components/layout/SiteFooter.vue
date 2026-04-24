@@ -87,7 +87,7 @@
 
     <!-- 底部版權列 -->
     <div class="site-footer-bottom">
-      <span class="copyright">© {{ currentYear }} 重光企業社 · Chong Guang 版權所有</span>
+      <span class="copyright">© {{ currentYear }} ClawStudiouo · 版權所有 · 保留所有權利</span>
       <div class="footer-bottom-links">
         <NuxtLink to="/privacy">隱私權政策</NuxtLink>
       </div>
