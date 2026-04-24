@@ -103,7 +103,7 @@ export default defineNuxtConfig({
   modules: ['nuxt-gtag'],
 
   gtag: {
-    id: 'G-RZH9MFRD9W',
+    id: 'G-L722DTZ3GH',
   },
 
   // TypeScript 嚴格模式
